@@ -13,7 +13,7 @@ var spawn_pos
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	
+	randomize()
 	spawn_pos = get_node("SpawnPos").get_global_pos()
 	text_node = preload("res://Nodes/Labe2l.tscn") #preload("res://shoot.tscn").instance()
 	#set filepath
@@ -29,7 +29,24 @@ func _on_Button_pressed():
 	if line > 6:
 		row = row + 1
 		line = 0
-	else :
-		print(line)
 	add_child(new_node)
 	new_node.set_label(file.get_line())
+
+
+func _on_Button_2_pressed():
+	line = 0
+	row = row + 1
+
+
+func _on_Button_3_pressed():
+	var numberWords = rand_range(20.0 , 40.0)
+	var i = 0
+	while i < numberWords:
+		_on_Button_pressed()
+		i = i + 1
+		if (line > 4):
+			if (randi() % int(floor(numberWords)) ) < 20:
+				row = row + 1
+				line = 0
+		
+	print(numberWords)

@@ -4,7 +4,6 @@
 
 [node name="Control" type="Control"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -24,7 +23,7 @@ size_flags/vertical = 2
 margin/left = -1.0
 margin/top = 1.0
 margin/right = 164.0
-margin/bottom = 44.0
+margin/bottom = 166.0
 
 [node name="Button" type="Button" parent="Panel"]
 
@@ -39,6 +38,39 @@ margin/bottom = 35.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+text = "Palabra"
+flat = false
+
+[node name="Button 2" type="Button" parent="Panel"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 19.0
+margin/top = 44.0
+margin/right = 147.0
+margin/bottom = 67.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Salto de linea"
+flat = false
+
+[node name="Button 3" type="Button" parent="Panel"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 79.0
+margin/right = 145.0
+margin/bottom = 99.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Azar"
 flat = false
 
 [node name="SpawnPos" type="Control" parent="."]
@@ -53,5 +85,9 @@ margin/right = 212.0
 margin/bottom = 69.0
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+
+[connection signal="pressed" from="Panel/Button 2" to="." method="_on_Button_2_pressed"]
+
+[connection signal="pressed" from="Panel/Button 3" to="." method="_on_Button_3_pressed"]
 
 
